@@ -1,5 +1,6 @@
 from enum import Enum, auto
 
+
 class KidWeight(Enum):
     FROM_3_TO_6 = auto()
     FROM_4_TO_9 = auto()

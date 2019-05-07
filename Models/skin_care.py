@@ -1,14 +1,12 @@
 from Models.baby_shop import BabyShop
 
 
-class Chair(BabyShop):
+class SkinCare(BabyShop):
 
     def __init__(self, name, brand, price, safety_standard, good_availability, warranty, age_suitability, supplier,
-                 country, height, width, depth, weight_limit, material):
+                 country, hypoallergenic, bottle_size_in_ml, skin_care_type):
         super().__init__(name, brand, price, safety_standard, good_availability, warranty, age_suitability, supplier,
                          country)
-        self.height = height
-        self.width = width
-        self.depth = depth
-        self.weight_limit = weight_limit
-        self.material = material
+        self.hypoallergenic = hypoallergenic
+        self.bottle_size_in_ml = bottle_size_in_ml
+        self.skin_care_type = skin_care_type

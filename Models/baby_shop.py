@@ -1,5 +1,6 @@
 class BabyShop:
-    def __init__(self, name, brand, price, safety_standard, good_availability, warranty, age_suitability, supplier, country):
+    def __init__(self, name, brand, price, safety_standard, good_availability, warranty, age_suitability, supplier,
+                 country):
         self.name = name
         self.brand = brand
         self.price = price
