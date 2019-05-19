@@ -47,7 +47,7 @@ def get_baby_shop():
     return jsonify(results.data)
 
 
-@app.route("user/<id>", methods=["GET"])
+@app.route("/user/<id>", methods=["GET"])
 def baby_shop_detail(id):
     baby_shop = BabyShop.query.get(id)
     return baby_shop_schema.jsonify(baby_shop)
