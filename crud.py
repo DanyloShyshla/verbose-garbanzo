@@ -6,6 +6,7 @@ import os
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'crud.sqlite')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
@@ -52,7 +53,7 @@ def baby_shop_detail(id):
     return baby_shop_schema.jsonify(baby_shop)
 
 
-@app.route("user/<id>", methods=["PUT"])
+@app.route("/user/<id>", methods=["PUT"])
 def baby_shop_update(id):
     baby_shop = BabyShop.query.get(id)
     name = request.json['name']
@@ -63,7 +64,7 @@ def baby_shop_update(id):
     return baby_shop_schema.jsonify(baby_shop)
 
 
-@app.route("user/<id>", methods=["DELETE"])
+@app.route("/user/<id>", methods=["DELETE"])
 def baby_shop_delete(id):
     baby_shop = BabyShop.query.get(id)
     db.session.delete(baby_shop)
